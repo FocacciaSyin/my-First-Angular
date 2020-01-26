@@ -1,0 +1,38 @@
+.container {
+  height: 80px;
+  background-color: lightgrey;
+
+  display: flex;
+  flex-direction: row;
+  // justify-content: flex-end;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-logo {
+  height: 100%;
+  width: 200px;
+  background-color: darkgray;
+  padding-left: 0;
+}
+
+.nav-main {
+  // margin: auto;
+  a {
+    margin: 0 20px;
+  }
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+a:hover {
+  color: steelblue;
+}
+
+.nav-item {
+  // margin-right: 10px;
+  margin: 0 10px;
+}

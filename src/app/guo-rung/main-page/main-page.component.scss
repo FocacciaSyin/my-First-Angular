@@ -1,0 +1,32 @@
+
+.container {
+  // padding-top: 20vh;
+  height: 80vh;
+  // background-color: darkturquoise;
+
+  /* The image used */
+  background-image: url("http://timable.com/res/pic/e602631284cb88e896d4ea5c8d05ef7e3.jpg");
+  /* Full height */
+  // height: 100%;
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+h2 {
+  margin: 20px 0;
+}
+
+.main {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  margin-left: 15%;
+}
+
+.main-button {
+  margin: 20px 0;
+}
