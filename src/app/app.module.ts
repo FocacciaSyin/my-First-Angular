@@ -4,6 +4,7 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { GuoRungModule } from './guo-rung/guo-rung.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -12,7 +13,8 @@ import { GuoRungModule } from './guo-rung/guo-rung.module';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    GuoRungModule
+    GuoRungModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

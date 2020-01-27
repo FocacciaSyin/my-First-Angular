@@ -11,27 +11,19 @@
   background-color: white;
 }
 
-.nav-logo {
-  height: 100%;
-  width: 200px;
-  padding-left: 0;
+.logo {
+  margin: 0 10px;
 }
 
-.nav-main {
+.nav {
   a {
-    margin: 0 20px;
+    margin: 0 50px;
+    text-decoration: none;
+    color: darkgray;
   }
-}
-
-a {
-  text-decoration: none;
-  color: darkgray;
 }
 
 a:hover {
   color: steelblue;
 }
 
-.nav-item {
-  margin: 0 20px;
-}
