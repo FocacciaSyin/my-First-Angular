@@ -1,5 +1,5 @@
 .container {
-  height: 80px;
+  height: 10%;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -9,6 +9,9 @@
   top: 0;
   z-index: 2;
   background-color: white;
+
+  // 框框外陰影(下px 右px 暈染程度px 實體線px)
+  box-shadow: rgba(0,0,0,0.4) 2px 0px 5px 0px;
 }
 
 .logo {

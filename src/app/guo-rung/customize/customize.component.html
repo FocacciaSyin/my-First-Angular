@@ -1,19 +1,44 @@
-
 <mat-horizontal-stepper #stepper>
   <mat-step>
-    <!-- <form [formGroup]="firstFormGroup">
-      <ng-template matStepLabel>Fill out your name</ng-template>
-      <mat-form-field>
-        <input matInput placeholder="Last name, First name" formControlName="firstCtrl" required>
-      </mat-form-field>
-      <div>
-        <button mat-button matStepperNext>Next</button>
-      </div>
-    </form> -->
     <ng-template matStepLabel>基本資料</ng-template>
     <p>
       Step 1
     </p>
+
+    <form [formGroup]="formBaseInfo">
+      <ng-template matStepLabel>Fill out your name</ng-template>
+
+      <div class="item">
+        <label>Id</label><span>:</span>
+        <mat-form-field>
+          <input matInput formControlName="id">
+        </mat-form-field>
+      </div>
+
+      <div class="item">
+        <label>Height</label><span>:</span>
+        <mat-form-field>
+          <input matInput formControlName="height">
+        </mat-form-field>
+      </div>
+      <div class="item">
+        <label>Width</label><span>:</span>
+        <mat-form-field>
+          <input matInput formControlName="width">
+        </mat-form-field>
+      </div>
+      <div class="item">
+        <label>Unit</label><span>:</span>
+        <mat-form-field>
+          <input matInput formControlName="unit">
+        </mat-form-field>
+      </div>
+
+      <div>
+        <button mat-flat-button color="primary" matStepperNext>Next</button>
+      </div>
+    </form>
+
   </mat-step>
   <mat-step>
     <!-- <form [formGroup]="firstFormGroup">
