@@ -1,5 +1,9 @@
 .container {
+<<<<<<< HEAD
   height: 10%;
+=======
+  height: 100px;
+>>>>>>> 0b5678bd3abad7a9b42b72d8a7f796d781e951fd
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -18,15 +22,72 @@
   margin: 0 10px;
 }
 
-.nav {
-  a {
-    margin: 0 50px;
-    text-decoration: none;
-    color: darkgray;
-  }
+//參考
+//https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_dropdown_navbar
+//Start
+.navbar {
+  overflow: hidden;
+  background-color: #333;
 }
 
-a:hover {
-  color: steelblue;
+.navbar a {
+  width: 200px;
+  float: left;
+  font-size: 16px;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
 }
 
+.dropdown {
+  float: left;
+  overflow: hidden;
+}
+
+.dropdown .dropbtn {
+  width: 200px;
+  font-size: 16px;
+  border: none;
+  outline: none;
+  color: white;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+}
+
+.navbar > a:hover,
+.dropdown:hover .dropbtn {
+  background-color: #dc143c;
+  transform: scale(1.2); //放大
+  transition-duration: 2s; //延遲x秒
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+//End
