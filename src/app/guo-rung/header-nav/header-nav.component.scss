@@ -1,0 +1,29 @@
+.container {
+  height: 80px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  background-color: white;
+}
+
+.logo {
+  margin: 0 10px;
+}
+
+.nav {
+  a {
+    margin: 0 50px;
+    text-decoration: none;
+    color: darkgray;
+  }
+}
+
+a:hover {
+  color: steelblue;
+}
+
