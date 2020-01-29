@@ -13,7 +13,7 @@ export class CustomizeComponent implements OnInit {
   formBackground: FormGroup;
   formSubmit: FormGroup;
 
-  unitArray = ['公厘', '公分', '公尺', '台尺', '英寸', '英尺',];
+  unitArray = ['公厘', '公分', '公尺', '台尺', '英寸', '英尺'];
 
   constructor(private fb: FormBuilder) { }
 
@@ -53,16 +53,16 @@ export class CustomizeComponent implements OnInit {
 
   getConvertValue(inputUnit: string, inputValue: number, convertUnit: string) {
 
-    const currentUnit = inputUnit || '';
-    const currentValue = inputValue || 0;
-
-    if (!currentUnit || !convertUnit) {
+    if (!inputUnit || !convertUnit) {
       return 0;
     }
 
-    if (currentUnit === convertUnit) {
+    if (inputUnit === convertUnit) {
       return inputValue;
     }
+
+    const currentUnit = inputUnit || '';
+    const currentValue = inputValue || 0;
 
     const convertTo = LengthConvet.find(x => x.currentUnit === currentUnit).convertTo;
     const convertItem = convertTo.find(x => x.unit === convertUnit);
