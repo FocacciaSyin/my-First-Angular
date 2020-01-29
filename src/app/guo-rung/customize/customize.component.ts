@@ -64,7 +64,7 @@ export class CustomizeComponent implements OnInit {
     const currentUnit = inputUnit || '';
     const currentValue = inputValue || 0;
 
-    const convertTo = LengthConvet.find(x => x.currentUnit === currentUnit).convertTo;
+    const convertTo = LengthConvertConfig.find(x => x.currentUnit === currentUnit).convertTo;
     const convertItem = convertTo.find(x => x.unit === convertUnit);
 
     const newValue = convertItem.value * currentValue;
@@ -75,13 +75,13 @@ export class CustomizeComponent implements OnInit {
 }
 
 
-export const LengthConvet = [
+export const LengthConvertConfig = [
   {
     currentUnit: '公厘',
     currentValue: 1,
     convertTo: [
       { unit: '公分', value: 0.1 },
-      { unit: '公尺', value: 0.01 },
+      { unit: '公尺', value: 0.001 },
       { unit: '台尺', value: 0.0033 },
       { unit: '英寸', value: 0.03937 },
       { unit: '英尺', value: 0.00328084 }
