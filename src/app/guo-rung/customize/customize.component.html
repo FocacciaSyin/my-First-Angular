@@ -30,8 +30,30 @@
       <div class="item">
         <label>Unit</label><span>:</span>
         <mat-form-field>
-          <input matInput formControlName="unit">
+          <mat-select formControlName="unit">
+            <mat-option *ngFor="let unit of unitArray" [value]="unit">
+              {{unit}}
+            </mat-option>
+          </mat-select>
         </mat-form-field>
+      </div>
+
+      <!-- convert -->
+      <div class="item">
+        <label>ConvertTo</label><span>:</span>
+        <mat-form-field>
+          <mat-select formControlName="convertUnit">
+            <mat-option *ngFor="let unit of unitArray" [value]="unit">
+              {{unit}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+
+      <div class="item">
+        <label></label><span>:</span>
+        Height : {{convertValues.height}}
+        Width : {{convertValues.width}}
       </div>
 
       <div>

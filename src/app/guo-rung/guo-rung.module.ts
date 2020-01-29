@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { HeaderNavComponent } from './header-nav/header-nav.component';
 import { MainPageComponent } from './main-page/main-page.component';
 import { CustomizeComponent } from './customize/customize.component';
-import { MatButtonModule, MatFormFieldModule, MatInputModule } from '@angular/material';
+import { MatButtonModule, MatFormFieldModule, MatInputModule, MatSelectModule } from '@angular/material';
 import { MatStepperModule } from '@angular/material';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 
@@ -17,7 +17,8 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
     MatButtonModule,
     MatStepperModule,
     MatFormFieldModule,
-    MatInputModule
+    MatInputModule,
+    MatSelectModule
   ],
   exports: [HeaderNavComponent, MainPageComponent]
 })

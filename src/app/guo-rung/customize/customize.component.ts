@@ -13,10 +13,20 @@ export class CustomizeComponent implements OnInit {
   formBackground: FormGroup;
   formSubmit: FormGroup;
 
+  unitArray = ['公厘', '公分', '公尺', '台尺', '英寸', '英尺',];
+
   constructor(private fb: FormBuilder) { }
 
   ngOnInit() {
     this.formOnInit();
+  }
+
+  get convertValues() {
+    const formValue = this.formBaseInfo.getRawValue();
+
+    const height = this.getConvertValue(formValue.unit, + formValue.height, formValue.convertUnit);
+    const width = this.getConvertValue(formValue.unit, + formValue.width, formValue.convertUnit);
+    return { height, width };
   }
 
   formOnInit() {
@@ -24,7 +34,8 @@ export class CustomizeComponent implements OnInit {
       id: [],
       height: [],
       width: [],
-      unit: []
+      unit: [],
+      convertUnit: []
     });
     this.formLayout = this.fb.group({
       id: [],
@@ -40,4 +51,95 @@ export class CustomizeComponent implements OnInit {
     });
   }
 
+  getConvertValue(inputUnit: string, inputValue: number, convertUnit: string) {
+
+    const currentUnit = inputUnit || '';
+    const currentValue = inputValue || 0;
+
+    if (!currentUnit || !convertUnit) {
+      return 0;
+    }
+
+    if (currentUnit === convertUnit) {
+      return inputValue;
+    }
+
+    const convertTo = LengthConvet.find(x => x.currentUnit === currentUnit).convertTo;
+    const convertItem = convertTo.find(x => x.unit === convertUnit);
+
+    const newValue = convertItem.value * currentValue;
+    // console.log(`${currentValue}_ ${currentUnit} = ${newValue} _ ${convertUnit}`);
+    return newValue;
+  }
+
 }
+
+
+export const LengthConvet = [
+  {
+    currentUnit: '公厘',
+    currentValue: 1,
+    convertTo: [
+      { unit: '公分', value: 0.1 },
+      { unit: '公尺', value: 0.01 },
+      { unit: '台尺', value: 0.0033 },
+      { unit: '英寸', value: 0.03937 },
+      { unit: '英尺', value: 0.00328084 }
+    ]
+  },
+  {
+    currentUnit: '公分',
+    currentValue: 1,
+    convertTo: [
+      { unit: '公厘', value: 10 },
+      { unit: '公尺', value: 0.01 },
+      { unit: '台尺', value: 0.033 },
+      { unit: '英寸', value: 0.3937 },
+      { unit: '英尺', value: 0.0328084 }
+    ]
+  },
+  {
+    currentUnit: '公尺',
+    currentValue: 1,
+    convertTo: [
+      { unit: '公厘', value: 1000 },
+      { unit: '公分', value: 100 },
+      { unit: '台尺', value: 3.3 },
+      { unit: '英寸', value: 39.37 },
+      { unit: '英尺', value: 3.28084 }
+    ]
+  },
+  {
+    currentUnit: '台尺',
+    currentValue: 1,
+    convertTo: [
+      { unit: '公厘', value: 303.030303 },
+      { unit: '公分', value: 30.3030303 },
+      { unit: '公尺', value: 0.303030303 },
+      { unit: '英寸', value: 11.93032689 },
+      { unit: '英尺', value: 0.994193908 }
+    ]
+  },
+  {
+    currentUnit: '英寸',
+    currentValue: 1,
+    convertTo: [
+      { unit: '公厘', value: 25.4 },
+      { unit: '公分', value: 2.54 },
+      { unit: '公尺', value: 0.0254 },
+      { unit: '台尺', value: 0.08382 },
+      { unit: '英尺', value: 0.0833333 }
+    ]
+  },
+  {
+    currentUnit: '英尺',
+    currentValue: 1,
+    convertTo: [
+      { unit: '公厘', value: 304.8 },
+      { unit: '公分', value: 30.48 },
+      { unit: '公尺', value: 0.3048 },
+      { unit: '台尺', value: 1.00584 },
+      { unit: '英寸', value: 12 }
+    ]
+  }
+];
