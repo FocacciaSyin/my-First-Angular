@@ -8,9 +8,11 @@
 ## [⚙] 使用套件
 ### Material.ui
 #### 1.mat-horizontal-stepper (https://material-ui.com/components/steppers/)
+#### 2.mat-menu https://material.angular.io/components/menu/examples
 
 ## [📕]說明
-### 待補....
+### 參考文章 : 
+### ngfor : https://matthung0807.blogspot.com/2019/06/angular-7-ngfor.html
 
 
 ## [📃]代辦事項
