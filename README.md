@@ -16,7 +16,9 @@
 
 
 ## [📃]代辦事項
-- [ ]
+- [ ]  聯絡資訊 串 Google API 地圖
+- [ ]  此用python爬出結果 http://www.tachang.com.tw/index.php/web/products/
 
 ## [🚀]慾望清單(可作可不作)
 - [ ]  LoginPage嵌入FaceBook登入 
+
