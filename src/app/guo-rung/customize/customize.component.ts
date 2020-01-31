@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder } from '@angular/forms';
+import { NgbDateStruct } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-customize',
@@ -14,7 +15,7 @@ export class CustomizeComponent implements OnInit {
   formSubmit: FormGroup;
 
   unitArray = ['公厘', '公分', '公尺', '台尺', '英寸', '英尺'];
-
+  model: NgbDateStruct;
   constructor(private fb: FormBuilder) { }
 
   ngOnInit() {
