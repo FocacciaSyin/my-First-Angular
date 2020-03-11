@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder } from '@angular/forms';
-import { NgbDateStruct } from '@ng-bootstrap/ng-bootstrap';
+import { NgbDateStruct, NgbCalendar, NgbDate } from '@ng-bootstrap/ng-bootstrap';
+import * as moment from 'moment';
 
 @Component({
   selector: 'app-customize',
@@ -16,10 +17,17 @@ export class CustomizeComponent implements OnInit {
 
   unitArray = ['公厘', '公分', '公尺', '台尺', '英寸', '英尺'];
   model: NgbDateStruct;
-  constructor(private fb: FormBuilder) { }
+  constructor(private fb: FormBuilder, private calendar: NgbCalendar) { }
 
   ngOnInit() {
     this.formOnInit();
+  }
+
+  onDateChanges(event) {
+    console.log(event);
+    const jsDate = new Date(this.model.year, this.model.month - 1, this.model.day);
+    const weeknumber = moment(jsDate).week();
+    console.log(jsDate, weeknumber);
   }
 
   get convertValues() {
